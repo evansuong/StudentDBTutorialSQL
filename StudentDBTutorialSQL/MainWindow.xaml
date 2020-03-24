@@ -1,0 +1,75 @@
+﻿<Window x:Class="StudentDBTutorialSQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentDBTutorialSQL"
+        mc:Ignorable="d"
+        Title="Student Database" Height="450" Width="800">
+
+    <!-- WINDOW RESOURCES -->
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="LightGray">
+
+        <!-- TITLE -->
+        <Label Content="STUDENT DATABASE" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="25" VerticalAlignment="Top"/>
+
+        <!-- STUDENT NAME -->
+        <Label Content="Student Name" HorizontalAlignment="Left" Margin="56,68,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StuNameTB" HorizontalAlignment="Left" Margin="174,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+
+        <!-- STUDENT ADDRESS -->
+        <Label Content="Address" HorizontalAlignment="Left" Margin="56,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StuAddressTB" HorizontalAlignment="Left" Margin="174,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+
+        <!-- STUDENT PHONE NUMBER -->
+        <Label Content="Phone #" HorizontalAlignment="Left" Margin="56,149,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StuPhoneTB" HorizontalAlignment="Left" Margin="174,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+
+        <!-- STUDENT YEAR -->
+        <Label Content="Year" HorizontalAlignment="Left" Margin="56,190,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="StuYearCB" HorizontalAlignment="Left" Margin="174,192,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+
+        <!-- STUDENT MAJOR -->
+        <Label Content="Major" HorizontalAlignment="Left" Margin="56,229,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="StuMajorCB" HorizontalAlignment="Left" Margin="174,231,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Computer Science"/>
+            <ComboBoxItem Content="Electronics"/>
+            <ComboBoxItem Content="Mechanical"/>
+            <ComboBoxItem Content="Civil"/>
+            <ComboBoxItem Content="Electrical"/>
+        </ComboBox>
+
+        <!-- STUDENT ID -->
+        <Label Content="Student ID #" HorizontalAlignment="Left" Margin="56,277,0,0" VerticalAlignment="Top" Width="103"/>
+        <TextBox x:Name="StuIdTB" HorizontalAlignment="Left" Margin="204,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" MaxLength="3"/>
+
+
+        <!-- SEARCH -->
+        <Label Content="Search Student by ID" HorizontalAlignment="Left" Margin="417,116,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StuSearchTB" HorizontalAlignment="Left" Margin="567,120,0,0" MaxLength="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" Margin="664,119,0,0" VerticalAlignment="Top" Click="SearchBtn_Click"/>
+
+
+        <!-- BUTTONS -->
+        <Button x:Name="NewBtn" Content="New/Reset" HorizontalAlignment="Left" Margin="397,69,0,0" VerticalAlignment="Top" Width="76" Click="NewBtn_Click"/>
+        <Button x:Name="InsertBtn" Content="Insert" HorizontalAlignment="Left" Margin="492,69,0,0" VerticalAlignment="Top" Width="76" Click="InsertBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="591,69,0,0" VerticalAlignment="Top" Width="76" Click="UpdateBtn_Click"/>
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="686,69,0,0" VerticalAlignment="Top" Width="76" Click="DeleteBtn_Click"/>
+
+        <!-- LIVE VIEW OF DATA TABLE -->
+        <DataGrid x:Name="StuInfoDG" AutoGenerateColumns="True" Margin="329,192,38,29" IsReadOnly="True" MouseUp="StuInfoDG_MouseUp"/>
+
+    </Grid>
+</Window>
